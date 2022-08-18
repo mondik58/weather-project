@@ -66,6 +66,7 @@ const SearchCity: FC<SearchCity> = ({onSearchChange}) => {
               value={search}
               onChange={handleOnChange}
               loadOptions={loadOptions}
+              data-testid='search'
             />
           </Grid>
         </Grid>

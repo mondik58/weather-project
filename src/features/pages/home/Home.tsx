@@ -35,6 +35,9 @@ const Home = () => {
       })
     );
   };
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
 
   return (
     <Container maxWidth='lg' sx={{height: '100%'}}>
