@@ -8,3 +8,6 @@ export const addCities = (searchData: SearchData) => {
 
   localStorage.setItem('allCities', JSON.stringify(exitingCities));
 };
+
+export const getCities = (key: string) =>
+  JSON.parse(localStorage.getItem(key) || '{}');

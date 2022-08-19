@@ -50,6 +50,7 @@ export const currentWeatherAsync = createAsyncThunk(
       .then((data) => {
         return {...data, searchId: prop.searchId};
       });
+
     return response;
   }
 );

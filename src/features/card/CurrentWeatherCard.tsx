@@ -130,6 +130,7 @@ const CurrentWeatherCard: FC<{data: DataWeatherResponse}> = ({data}) => {
               component={Link}
               to={`/${data.searchId}`}
               size='small'
+              data-testid='delete'
             >
               Details
             </Button>

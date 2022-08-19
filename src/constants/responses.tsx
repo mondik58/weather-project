@@ -3,7 +3,7 @@ export const getCurrentWeather = {
     {
       weather: [
         {
-          id: 1,
+          id: 3,
           description: 'sun',
           icon: '01d',
         },
@@ -26,4 +26,6 @@ export const getCurrentWeather = {
       },
     },
   ],
+  loading: false,
+  error: null,
 };

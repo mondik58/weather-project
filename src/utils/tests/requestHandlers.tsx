@@ -3,14 +3,9 @@ import * as responses from '../../constants/responses';
 import {WEATHER_API_KEY, WEATHER_API_URL} from '../../constants/api';
 
 export const requestHandlers = [
-  rest.get(
-    `${WEATHER_API_URL}/weather?lat=25.3994&lon=55.4797&appid=${WEATHER_API_KEY}&units=metric`,
-    (req, res, ctx) => {
-      console.log(res, 'res');
-
-      return res(ctx.json(responses.getCurrentWeather));
-    }
-  ),
+  rest.get(`${WEATHER_API_URL}/weather`, (req, res, ctx) => {
+    return res(ctx.json(responses.getCurrentWeather));
+  }),
 ];
 
 // export const worker = setupWorker(

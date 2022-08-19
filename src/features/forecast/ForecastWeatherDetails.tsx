@@ -62,6 +62,7 @@ const ForecastWeatherDetails: FC<{data: ForecastWeatherData | null}> = ({
             onChange={handleChange(`panel${idx}`)}
             key={idx}
             expanded={expanded === `panel${idx}`}
+            data-testid='open-accordion'
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}

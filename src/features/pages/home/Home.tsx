@@ -9,16 +9,18 @@ import {
 } from '../../card/currentWeatherSlice';
 import {SearchData} from '../../searchCity/SearchCity';
 import CurrentWeatherCard from '../../card/CurrentWeatherCard';
+import {getCities} from '../../../utils/localStorage';
 
 const Home = () => {
   const dispatch = useAppDispatch();
   const {data, loading} = useAppSelector((state) => state.currentWeather);
 
   useEffect(() => {
-    const dataStorage = JSON.parse(localStorage.getItem('allCities') || '{}');
+    const dataStorage = getCities('allCities');
 
     Object.values(dataStorage).forEach((item: any) => {
       const [lat, lon] = item ? item.value.split(' ') : ['', ''];
+      console.log('useeffect');
       dispatch(
         currentWeatherAsync({lat, lon, searchId: item ? item.id : undefined})
       );
@@ -35,9 +37,6 @@ const Home = () => {
       })
     );
   };
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   return (
     <Container maxWidth='lg' sx={{height: '100%'}}>
